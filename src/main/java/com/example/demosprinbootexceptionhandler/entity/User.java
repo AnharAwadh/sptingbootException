@@ -1,8 +1,14 @@
 package com.example.demosprinbootexceptionhandler.entity;
 
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
+
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @Setter
 @Getter
 public class User {
@@ -18,4 +24,5 @@ public class User {
     private String lastName;
 
     @Column(name = "email")
+    @Email(message = "The syntax should be right like : exm@tes.com")
     private String email;}

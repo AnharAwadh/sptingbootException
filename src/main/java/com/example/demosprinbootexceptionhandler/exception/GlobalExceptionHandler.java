@@ -12,9 +12,9 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> customExceptionHandling(Exception exception){
+    public ResponseEntity<?> customExceptionHandling(MethodArgumentNotValidException exception){
         ErrorDetails errorDetails =
-                new ErrorDetails(new Date(), exception.getMessage(), 400);
+                new ErrorDetails(new Date(), exception.getBindingResult().getFieldError().getDefaultMessage(), 400);
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 }
