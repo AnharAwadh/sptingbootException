@@ -24,5 +24,5 @@ public class User {
     private String lastName;
 
     @Column(name = "email")
-    @Email(message = "The syntax should be right like : exm@tes.com")
+    @Email(message = "The email syntax should be right like : exm@tes.com")
     private String email;}
